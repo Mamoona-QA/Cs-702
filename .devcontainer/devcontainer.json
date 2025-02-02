@@ -1,0 +1,45 @@
+// For format details, see https://aka.ms/devcontainer.json. 
+// For config options, see the README at: 
+// https://github.com/devcontainers/templates/tree/main/src/javascript-node
+{
+	"name": "Node.js",
+	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+	"image": "mcr.microsoft.com/devcontainers/javascript-node:1-22-bookworm",
+
+	// Features to add to the dev container. More info: https://containers.dev/features.
+	// "features": {},
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [3000, 5000], // Example: Open ports for local development
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	"postCreateCommand": "yarn install",
+
+	// Configure tool-specific properties.
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"esbenp.prettier-vscode",
+				"vscode-icons-team.vscode-icons",
+				"wayou.vscode-todo-highlight"
+			],
+			"settings": {
+				"editor.formatOnSave": true,  // Enable auto-formatting on save
+				"editor.tabSize": 2,  // Use 2 spaces for indentation
+				"files.trimTrailingWhitespace": true,  // Auto-remove trailing spaces
+				"files.insertFinalNewline": true,  // Ensure file ends with a newline
+				"files.autoSave": "afterDelay",  // Auto-save after slight delay
+				"javascript.preferences.quoteStyle": "single",  // Use single quotes for JavaScript
+				"prettier.singleQuote": true,  // Ensure consistency with Prettier
+				"prettier.trailingComma": "es5",  // Use ES5-compatible trailing commas
+				"terminal.integrated.defaultProfile.linux": "bash", // Default terminal to Bash
+				"editor.fontsize": 32,
+				"editor.wordrap": "on"
+
+			}
+		}
+	}
+
+	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	// "remoteUser": "root"
+}
